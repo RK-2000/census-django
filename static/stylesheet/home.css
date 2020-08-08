@@ -1,0 +1,77 @@
+
+#navbar-main{
+	background-color: cyan;
+	color: cornsilk;
+}
+
+#brand-name{
+	margin-left: 15px;
+	font-size: 30px;
+}
+.active{
+	border-bottom-width: 2px;
+	border-color: #EAEAEA;
+}
+.point-1,.point-2,.point-3{
+	margin-top:60px;
+	margin-bottom: 20px;;
+}
+.footer{
+	display: flex;
+	justify-items: center;
+	justify-content: center;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.list-group-item{
+	border-style: none ;
+	list-style: none;
+}
+#developer{
+	margin-top: 10px;
+}
+.reach-me{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin-top: 10px;
+}
+#Census{
+	color:rgb(107, 98, 230);
+	border-bottom:2px solid cadetblue;
+}
+.navbar-brand{
+	font-size: x-large;
+	padding-left: 30px;;
+}
+.nav-links-top{	
+padding-right: 10px;
+}
+#row-1{
+	margin-top: 50px;
+}
+.nav-item{
+	color: #EAEAEA;
+}
+#btn-1,#btn-2,#btn-3{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border: none;
+	width: 180px;
+}
+
+.modal-header{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.form-control{
+	border-top: none;
+	border-left:none;
+	border-right: none;
+}
+.bg-custom{
+	background-color: #39424e;
+}

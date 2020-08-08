@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Census-Signup</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'stylesheet/sign_up.css'%}">
+        <link rel="stylesheet" href="{% static 'stylesheet/animation.css' %}">    
+       
+    </head>
+   <body id = "body-signup">
+    <div class="circle"></div>
+        <div class="box"></div>
+        <div class="triangle"></div>
+        <nav class="navbar navbar-expand-lg navbar-dark shadow bg-dark">
+			<div class="container-fluid">
+			<a class="navbar-brand" href="#">
+				<img src="{% static 'images/Census-logo.png' %}" width="70px;">
+				Census
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>  
+
+		<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+			<ul class="nav">
+				<li class="nav-item light">
+				  <a class="nav-link text-light " href="{% url 'index' %}">Home</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link disabled text-light" href="#">Blog</a>
+				</li>
+				<li class="nav-item">
+					  <a class="nav-link text-light active"href="{% url 'signup' %}" >Sign in</a>
+				</li>
+			  </ul>
+		</div>
+	</div>
+	</nav>
+    <main class="container">
+        <div class=" col-12 container-fluid bg-danger text-light shadow rounded">
+            {% if messages %}				
+                {% for message in messages %}
+                    ERROR : {{message}}
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="container " id="top-container">
+        <div class="row shadow text-leftr" id="main-part">
+            <div class="col-12 col-lg-6" id="left-side">
+                <div class="row">
+                    <div class="col-10">
+                        <h2 class="h2" id="heading">
+                            Create an account and personalize your Census 
+                        </h2>
+                        <div class="d-none d-lg-block" id = "para">
+                            Unrestrained behaviour leads eventually to destruction. People who have no vision also have no goal or purpose-nothing to shoot for. They have no direction and nowhere to go in life and, therefore they go nowhere.
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <div class="col-12 col-lg-6" id="right-side">
+                <form id="sign-up-form" method="POST">
+                    {% csrf_token %}
+
+                    <div class="row">
+
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="fname" placeholder="First Name" aria-label="First Name" aria-describedby="addon-wrapping" name="f-name">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="sname" placeholder="Second Name" aria-label="Second Name" aria-describedby="addon-wrapping" name="s-name">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <input name = 'email' type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-label="" aria-describedby="addon-wrapping">
+                                <small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <input name = 'username' type="text" class="form-control"  placeholder="Username" aria-label="" aria-describedby="addon-wrapping" >
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="exampleInputPassword1"  name = 'password1' placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+                                <small id="emailHelp" class="form-text">Keep your password strong.</small>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <input name = 'password2' type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password" aria-label="Password" aria-describedby="addon-wrapping">
+                              </div>
+                        </div>
+
+                        <div class="col-12 col-lg-8 text-left">
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">I agree to all the terms and conditions.</label>
+                              </div>
+                        </div>
+                        <div class="col-12" id="btn-col">
+                            <div class="form-group">
+                                <button class="btn btn-success">
+                                    Create account
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+            </form>
+            </div>
+        </div>    
+        </div>
+    </main>        
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>    
+   </body>
+</html>
