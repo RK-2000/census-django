@@ -1,0 +1,64 @@
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-radius: 50px;
+    background-color: #EAEAEA;
+    border-width: 3px;
+    opacity: .25;
+    border-color: red;
+    position: absolute;
+    margin-left: 10px;
+    margin-right: 10px;
+  
+    animation: animate-1 35s linear 5s infinite alternate;
+  }
+  
+  @keyframes animate-1 {
+    0%   {border-color:red; left:0px; top:0px;}
+    25%  {border-color:yellow; left:50%; top:80%;}
+    50%  {border-color:blue; left:20%; top:20%;}
+    75%  {border-color:green; left:50%; top:90%;}
+    100% {border-color:red; left:0px; top:0px;}
+  }
+
+  .box{
+      width:50px; 
+      height:50px;
+      border-style: double;
+      background-color: #EAEAEA;
+      border-color: red;
+      border-radius: 60px;
+      position: absolute;
+      opacity: .25;
+      float: right;
+        animation: animate-2 35s linear 5s infinite alternate ;
+  }
+  @keyframes animate-2{
+      0% {border-color: red ; left:80%; top:10px; }
+      25% {border-color:yellow ; left:80%; top:50%; }
+      50% {border-color:blue ;left:60%; top:70%; }
+      75% {border-color:green ;left:10% ;top:90%; }
+      100% {border-color:red ; left:80%; top:10px; }
+  }
+  .triangle{
+        width:50px; 
+        height:50px;
+        border-style: double;
+        background-color: #EAEAEA;
+        border-color: red;
+        border-radius: 10px;
+        position: absolute;
+        opacity: .25;
+        float: right;
+        animation: animate-3 35s linear 5s infinite alternate;
+  }
+  @keyframes animate-3
+  {
+      0% {border-color: orange; left:40%; top:10px; }                             
+      25% {border-color:yellow; left:10%; top:40%; }                              
+      50% {border-color:blue;left:10%; top:70%; }                                 
+      75% {border-color:green;left:40%; top:90%; }                                
+      100% {border-color:red; left:40%; top:10px; }                               
+  }

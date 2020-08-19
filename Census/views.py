@@ -3,8 +3,11 @@ from django.contrib.auth import login,logout
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
+from Census.models import Blogs
 # Create your views here.
+
+
 def index(request):
     
     if request.method == 'POST':
@@ -14,13 +17,22 @@ def index(request):
         user = authenticate(username=username,password=password)
         if user is not None:
             login(request,user)
-            return render(request,"index.html")
+            return redirect('index2')
         else:
             messages.error(request,'Wrong Credentials')
             return redirect('index')
     else:
         return render(request,'index.html')
-       
+
+@login_required
+def index2(request):
+    all_ob = Blogs.objects.all()
+    context = {
+                'blogs':all_ob
+            }  
+     
+    return render(request,'index.html',context)
+
 
 def signup(request):
     
@@ -40,7 +52,7 @@ def signup(request):
                     user.save()            
                     print('user created')
                     login(request,user)
-                    return render(request,'index.html')
+                    return redirect('index2')
                 else:
                     
                     for msg in system_messages:
@@ -66,3 +78,14 @@ def signup(request):
 def logged(request):
     logout(request)
     return redirect('index')        
+
+def error_404(request,reason=''):
+        data = {}
+        return render(request,'error_404.html', data)
+
+def error_500(request):
+        data = {}
+        return render(request,'error_404.html', data)
+
+def csrf_failure(request, reason=""):
+    return render(request,"error_404.html")    

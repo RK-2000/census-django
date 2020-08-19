@@ -41,18 +41,11 @@ body{
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
 .list-group-item{
 	border-style: none ;
 	list-style: none;
 }
-
-.drp-btn{
-border-style: none;
-}
-.dropdown-menu{
-padding-right: 20px;
-}
-
 #developer{
 	margin-top: 10px;
 }
